@@ -54,6 +54,7 @@ script:
   - popd
 
 after_success: >
+   echo "Travis branch: $TRAVIS_BRANCH"
    if [[ "${TRAVIS_PULL_REQUEST:-unknown}" == "false" && $TRAVIS_BRANCH == dev-* ]] ; then
      export NEW_VERSION
      export TEAVM_FTP_HOST
